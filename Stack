@@ -1,0 +1,110 @@
+#include<stdio.h>
+#include<conio.h>
+#define MAX 5
+int stack[MAX];
+int top=-1;
+
+void push();
+void pop();
+void display();
+
+
+
+void main()
+{
+	int ch;
+
+	clrscr();
+
+	while(ch)
+	{
+		printf("\n\n1.PUSH\n2.POP\n3.Display\n4.Exit");
+
+		printf("\nEnter your choice : ");
+		scanf("%d",&ch);
+
+		switch(ch)
+		{
+			case 1:push();
+			break;
+
+			case 2:pop();
+			break;
+
+			case 3:display();
+			break;
+
+			case 4:exit(0);
+
+		default:printf("\n Enter choice from 1 to 4");
+		break;
+
+		}//end switch
+
+	}//end while
+	getch();
+
+}//end main
+
+void push()
+{
+     int Number;
+     int i;
+
+     if(top==(MAX-1))
+     printf("\nStack Overflow");
+
+     else
+     {
+	printf("\nEnter element : ");
+	scanf("%d",&Number);
+
+	top=top+1;
+	stack[top]=Number;
+
+	printf("\nElement inserted= %d and in location =%d",Number,top);
+
+
+     }//end if else
+
+
+
+}//end push
+
+void pop()
+{
+	int Number;
+	int i;
+
+	if(top==-1)
+	printf("\n Stack Uderflow");
+
+	else
+	{
+		Number = stack[top];
+		printf("\nElement deleted = %d and from location = %d",Number,top);
+		top=top-1;
+	}//end if else
+
+
+}//end pop
+
+void display()
+{
+	int i;
+
+	if(top==-1)
+	printf("\nStack is empty");
+
+	else
+	{
+		for(i=top;i>=0;i--)
+		{
+			printf("\nElement = %d",stack[i]);
+
+		}//end for i
+
+	}//end if else
+
+}//end display
+
