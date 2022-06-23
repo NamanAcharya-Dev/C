@@ -16,7 +16,7 @@ void main()
 
 	clrscr();
 
-	while(ch)
+	while(1)
 	{
 		printf("\n\n1.PUSH\n2.POP\n3.Display\n4.Exit");
 
